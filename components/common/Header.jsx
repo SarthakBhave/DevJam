@@ -82,10 +82,10 @@ const Header = () => {
               Contact{" "}
             </a>
           </div>
-
-          
+          <div className={style.headerItems}>
             <WalletConnect />
           </div>
+        </div>
         <HamburgerMenu />
         <Image
           src="/line.svg"
