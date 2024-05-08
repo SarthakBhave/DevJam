@@ -147,44 +147,15 @@ export default function Component({ params }: { params: { roomId: string } }) {
 
     return (
         <div className={clsx('flex flex-col h-screen bg-black')}>
-            <header className='flex items-center justify-between pt-4 px-4'>
-                <div className='flex'>
-                    <Image src="/video-01.png" alt="logo" height={30} width={30} />
-                    <h1 className='text-white text-xl font-semibold'>DevJam</h1>
-                </div>
-                <div className='flex space-x-3'>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button className='flex gap-2 bg-gray-600/50 text-gray-200 hover:bg-gray-500/50'>
-                                {BasicIcons.invite}
-                                Invite
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                            <div className='flex space-x-2'>
-                                <span className='p-2 bg-gray-700/50 rounded-lg'>
-                                    {typeof window !== 'undefined' &&
-                                        `http://${window.location.host}/${params.roomId}`}
-                                </span>
-                                <Button
-                                    onClick={() => {
-                                        if (typeof window === 'undefined') return;
-                                        navigator.clipboard.writeText(
-                                            `http://${window.location.host}/${params.roomId}`
-                                        );
-                                        setIsCopied(true);
-                                        setTimeout(() => {
-                                            setIsCopied(false);
-                                        }, 3000);
-                                    }}
-                                >
-                                    {isCopied ? 'Copied' : 'Copy'}
-                                </Button>
-                            </div>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
-            </header>
+            <div className='w-full border-b rounded-b-lg'>
+                {/* <header className='flex items-center justify-between pt-4 px-4'> */}
+                <header className='max-w-[95vw] w-full px-3 xl:p-0 my-5 mx-auto flex justify-between items-center'>
+                    <div className='flex'>
+                        <Image src="/video-01.png" alt="logo" height={35} width={35} />
+                        <h1 className='text-white text-3xl font-medium'>DevJam</h1>
+                    </div>
+                </header>
+            </div>
             <main
                 className={`transition-all ease-in-out flex items-center justify-center flex-1 duration-300 w-full h-full`}
                 style={{
@@ -196,18 +167,18 @@ export default function Component({ params }: { params: { roomId: string } }) {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className='flex w-full h-full p-2'>
+                <div className='flex w-full h-full aspect-video py-6'>
                     {shareStream && (
-                        <div className='w-3/4'>
-                            <GridContainer className='w-full h-full'>
-                                <>
-                                    <Video
-                                        stream={videoTrack && new MediaStream([videoTrack])}
-                                        name={metadata?.displayName ?? 'guest'}
-                                    />
-                                </>
-                            </GridContainer>
-                        </div>
+
+                        <GridContainer className='w-full h-auto '>
+                            <>
+                                <Video
+                                    stream={videoTrack && new MediaStream([videoTrack])}
+                                    name={metadata?.displayName ?? 'guest'}
+                                />
+                            </>
+                        </GridContainer>
+
                     )}
                     {peerIds.map((peerId) => (
                         <RemoteScreenShare key={peerId} peerId={peerId} />

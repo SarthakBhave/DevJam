@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
                             trustWallet(),
                             zerionWallet(),
                         ]}
-                        clientId="da9688429757dd629ac6c298bde81248"
+                        clientId="8152097800b0e5d24fb8beebc2f063ca"
                     >
                         {children}
                     </ThirdwebProvider>

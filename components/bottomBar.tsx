@@ -68,7 +68,7 @@ const BottomBar = () => {
     };
 
     return (
-        <footer className='flex items-center justify-between px-4 py-2'>
+        <footer className='flex items-center justify-between px-4 py-2 flex-wrap border-t rounded-t-lg bg-neutral-900'>
             <div className='flex items-center'>
                 {role === Role.HOST ? (
                     <Button
@@ -88,7 +88,8 @@ const BottomBar = () => {
             </div>
 
             <div
-                className={clsx('flex space-x-3', role === Role.HOST ? 'mr-12' : '')}
+                className={clsx('flex space-x-3', role === Role.HOST ? '' : '')}
+                style={{ margin: "5px 0px 5px 0px" }}
             >
                 <ChangeDevice deviceType='cam'>
                     <button
@@ -168,6 +169,7 @@ const BottomBar = () => {
                     {BasicIcons.chat}
                 </ButtonWithIcon>
             </div>
+
         </footer>
     );
 };

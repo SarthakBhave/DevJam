@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import Video from '@/components/Media/Video';
 import ChangeDevice from '@/components/changeDevice';
 import { Button } from '@/components/ui/button';
@@ -80,8 +80,18 @@ const Lobby = ({ params }: { params: { roomId: string } }) => {
         }
     }, [audioInputDevice]);
 
-    return (
+    return (<>
+        <div className='w-full border-b rounded-b-lg'>
+            {/* <header className='flex items-center justify-between pt-4 px-4'> */}
+            <header className='max-w-[95vw] w-full px-3 xl:p-0 my-5 mx-auto flex justify-between items-center'>
+                <a href='/' className='flex'>
+                    <Image src="/video-01.png" alt="logo" height={35} width={35} />
+                    <h1 className='text-white text-3xl font-medium'>DevJam</h1>
+                </a>
+            </header>
+        </div>
         <div className='w-full min-h-screen p-8 flex flex-col items-center justify-center text-gray-200'>
+
             <div className='flex justify-center items-center w-full max-w-md p-4 rounded-lg shadow'>
                 <div className='flex flex-col gap-2'>
                     <span className='font-extrabold text-2xl'>
@@ -169,6 +179,7 @@ const Lobby = ({ params }: { params: { roomId: string } }) => {
                 </div>
             </div>
         </div>
+    </>
     );
 };
 
