@@ -167,10 +167,10 @@ export default function Component({ params }: { params: { roomId: string } }) {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className='flex w-full h-full aspect-video py-6'>
+                <div className='w-full h-full flex mx-auto py-6'>
                     {shareStream && (
-
-                        <GridContainer className='w-full h-auto '>
+                        // <div className='w-3/4'>
+                        <GridContainer className='w-full h-full'>
                             <>
                                 <Video
                                     stream={videoTrack && new MediaStream([videoTrack])}
@@ -178,7 +178,7 @@ export default function Component({ params }: { params: { roomId: string } }) {
                                 />
                             </>
                         </GridContainer>
-
+                        // {/* </div> */}
                     )}
                     {peerIds.map((peerId) => (
                         <RemoteScreenShare key={peerId} peerId={peerId} />

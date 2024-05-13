@@ -85,7 +85,7 @@ const ChatBar = () => {
     };
 
     return (
-        <div className='flex w-96 rounded-lg mr-4 flex-col h-full bg-gray-800 text-white'>
+        <div className='flex w-96 rounded-lg mr-4 mt-6 mb-6 flex-col bg-gray-800 text-white' style={{ height: "-webkit-fill-available" }}>
             <div className='px-4 py-2 border-b border-gray-700'>
                 <h1 className='text-xl font-semibold'>Chat</h1>
             </div>
