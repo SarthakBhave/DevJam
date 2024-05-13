@@ -167,10 +167,10 @@ export default function Component({ params }: { params: { roomId: string } }) {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className='flex w-full h-full aspect-video py-6'>
+                <div className='flex w-full h-full mx-auto py-6'>
                     {shareStream && (
 
-                        <GridContainer className='w-full h-auto '>
+                        <GridContainer className='w-full h-full'>
                             <>
                                 <Video
                                     stream={videoTrack && new MediaStream([videoTrack])}

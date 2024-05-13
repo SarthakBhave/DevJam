@@ -11,7 +11,7 @@ const GridContainer: FC<GridContainerProps> = ({ children, className }) => {
     return (
         <div
             className={clsx(
-                'bg-gray-800 relative w-[49%] rounded-lg flex flex-col items-center justify-center',
+                'bg-gray-800 relative w-[49%] rounded-lg flex flex-col items-center aspect-video justify-center',
                 className
             )}
         >
