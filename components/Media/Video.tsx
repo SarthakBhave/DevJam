@@ -29,7 +29,7 @@ const Video = ({ stream, name }: VideoProps) => {
     return (
         <>
             <video
-                className='h-full w-full rounded-lg object-cover -scaleY-100'
+                className='h-full w-full rounded-lg object-cover aspect-video'
                 ref={videoRef}
                 autoPlay
                 muted

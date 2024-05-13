@@ -157,7 +157,7 @@ export default function Component({ params }: { params: { roomId: string } }) {
                 </header>
             </div>
             <main
-                className={`transition-all ease-in-out flex items-center justify-center flex-1 duration-300 w-full h-full`}
+                className={`transition-all ease-in-out flex items-center justify-center flex-1 duration-300 w-full`}
                 style={{
                     backgroundColor: activeBg === 'bg-black' ? 'black' : undefined,
                     backgroundImage:
