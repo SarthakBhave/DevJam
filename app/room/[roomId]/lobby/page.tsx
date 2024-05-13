@@ -157,8 +157,7 @@ const Lobby = ({ params }: { params: { roomId: string } }) => {
                             }
                             setIsJoining(true);
                             const response = await fetch(
-                                `/token?roomId=${params.roomId}&displayName=${name}`
-                            );
+                                `/token?roomId=${params.roomId}&displayName=${name}`);
                             const token = await response.text();
                             await joinRoom({
                                 roomId: params.roomId,
